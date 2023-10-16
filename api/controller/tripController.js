@@ -1,5 +1,9 @@
-const { Trip, User, Driver } = require("../models");
-const { createdSuccessResponse, successResponse } = require("../util/response");
+const { Trip, User, Driver, Feedback } = require("../models");
+const {
+  createdSuccessResponse,
+  successResponse,
+  notFoundResponse,
+} = require("../util/response");
 
 exports.createTrip = async (req, res) => {
   try {
@@ -36,9 +40,24 @@ exports.getTripById = async (req, res) => {
   try {
     const { id: tripId } = req.params;
 
-    const trip = await Trip.findAll({ where: { id: tripId } });
+    const trip = await Trip.findOne({
+      where: { id: tripId },
+      include: [Driver],
+    });
 
-    return successResponse(res, "succesfully fetched trip ", trip);
+    if (!trip) {
+      return notFoundResponse(res, `Trip not found with id ${tripId}`);
+    }
+
+    const feedback = await Feedback.findOne({ where: { TripId: tripId } });
+    if (feedback?.answer) {
+      return successResponse(res, "succesfully fetched trip ", {
+        ...JSON.parse(JSON.stringify(trip)),
+        feedback,
+      });
+    } else {
+      return successResponse(res, "succesfully fetched trip ", trip);
+    }
   } catch (error) {
     console.log(error);
   }

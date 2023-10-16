@@ -7,6 +7,7 @@ const authRoutes = require("./routes/authRoutes");
 const driverRoutes = require("./routes/driverRoutes");
 const tripRoutes = require("./routes/tripRoutes");
 const feedbackRoutes = require("./routes/feedbackRoutes");
+const userRoutes = require("./routes/userRoutes");
 
 const cors = require("cors");
 const app = express();
@@ -24,6 +25,7 @@ app.use("/api/v1/auth", authRoutes);
 app.use("/api/v1/driver", driverRoutes);
 app.use("/api/v1/trip", tripRoutes);
 app.use("/api/v1/feedback", feedbackRoutes);
+app.use("/api/v1/users", userRoutes);
 
 sequelize
   .sync({ alter: true })

@@ -1,4 +1,4 @@
-const { User, Company, Driver, Feedback } = require("../models");
+const { User, Company, Driver, Feedback, Trip } = require("../models");
 const { encryptPassword, decryptPassword } = require("../util/util");
 const {
   createdSuccessResponse,
@@ -27,12 +27,40 @@ exports.createFeedback = async (req, res) => {
   }
 };
 
+exports.fetchAllFeedback = async (req, res) => {
+  try {
+    const feedbacks = await Feedback.findAll({ include: [Trip, User] });
+
+    return successResponse(res, "Successfully fetched all trips", feedbacks);
+  } catch (error) {
+    console.log(error);
+    serverErrorResponse(res);
+  }
+};
+
+exports.fetchFeedbackById = async (req, res) => {
+  try {
+    const { id: feedback_id } = req.params;
+
+    const feedbacks = await Feedback.findAll({
+      where: { id: feedback_id },
+      include: [Trip],
+    });
+
+    return successResponse(res, "Successfully fetched all trips", feedbacks);
+  } catch (error) {
+    console.log(error);
+    serverErrorResponse(res);
+  }
+};
+
 exports.fetchAllFeedbackByUsers = async (req, res) => {
   try {
     const { user_id, trip_id, driver_id, answer } = req.body;
 
     const tripFeedback = await Feedback.findAll({
       where: { UserId: user_id },
+      include: [Driver, Trip, User],
     });
 
     return successResponse(
@@ -69,7 +97,7 @@ exports.fetchDriverFeedback = async (req, res) => {
   }
 };
 
-exports.fetchAllFeedbackByUsers = async (req, res) => {
+exports.fetchAllFeedbackByTrips = async (req, res) => {
   try {
     const { user_id, trip_id, driver_id, answer } = req.body;
 
