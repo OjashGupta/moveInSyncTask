@@ -32,15 +32,18 @@ async function getTripById({ tripId }) {
   try {
     const response = await axios.get(`/api/v1/trip/${tripId}`);
     console.log(response);
-    return response;
+    return response.data["data"][0];
   } catch (error) {
     console.log(error);
   }
 }
 
-async function sendFeedbackToTrip() {
+async function sendFeedbackToTrip({ payload }) {
   try {
+    const response = await axios.post("/api/v1/feedback/", payload);
+    console.log(response);
+    return response;
   } catch (error) {}
 }
 
-export { getTrips, login, getTripById };
+export { getTrips, login, getTripById, sendFeedbackToTrip };

@@ -1,8 +1,8 @@
 import React, { useEffect, useState } from "react";
 import { getTrips } from "../../services/APIService";
 import "./TravelerPage.css";
-import { computeHeadingLevel } from "@testing-library/react";
 import { Link } from "react-router-dom";
+import { Container, ListGroup } from "react-bootstrap";
 
 function TravelerPage() {
   const [trips, setTrips] = useState();
@@ -25,28 +25,27 @@ function TravelerPage() {
   console.log(trips);
 
   return (
-    <div className="traveller_container">
+    <Container className="traveller_container">
       <h1>Your Trips</h1>
       <hr></hr>
-      { trips? (
-      trips?.length !== 0 ? (
-        <ul>
-          {trips.map((item, index) => {
-            return (
-              <li key={index}>
-                <Link to={`/trip_feedback/${item.id}`}>{item.name}</Link>
-              </li>
-            );
-          })}
-        </ul>
+      {trips ? (
+        trips?.length !== 0 ? (
+          <ListGroup>
+            {trips.map((item, index) => {
+              return (
+                <ListGroup.Item key={index}>
+                  <a href={`/trip_feedback/${item.id}`}>{item.name}</a>
+                </ListGroup.Item>
+              );
+            })}
+          </ListGroup>
+        ) : (
+          <h6>No Element</h6>
+        )
       ) : (
-        <h6>No Element</h6>
-      )
-      ):(
         <h6>Loading</h6>
-      )
-    }
-    </div>
+      )}
+    </Container>
   );
 }
 

@@ -1,0 +1,15 @@
+.submitted_container{
+    text-align: center;
+    margin: auto;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 8px;
+    margin-top: 150px;
+    
+}
+
+.submit_img{
+    width: 120px;
+}

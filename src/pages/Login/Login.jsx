@@ -32,6 +32,7 @@ const Login = () => {
     console.log(user);
     if(user){
       localStorage.setItem("userID", user['id'] );
+      localStorage.setItem("userdata", JSON.stringify(user))
     }
 
     if (user["role"] === "TRAVELLER") {
