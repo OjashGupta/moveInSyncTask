@@ -1,71 +1,63 @@
-# Getting Started with Create React App
+# Trip Feedback System
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+MoveinSync Task
 
-## Available Scripts
+## Screen Shots
 
-In the project directory, you can run:
+![ss1](https://github.com/OjashGupta/moveInSyncTask/blob/main/public/mis-ss/Login-page.png)
+![ss3](https://github.com/OjashGupta/moveInSyncTask/blob/main/public/mis-ss/Traveller-1-Dashboard.png)
+![ss4](https://github.com/OjashGupta/moveInSyncTask/blob/main/public/mis-ss/Traveller-2-Dashboard.png)
+![ss9](https://github.com/OjashGupta/moveInSyncTask/blob/main/public/mis-ss/feedback-view.png)
+![ss2](https://github.com/OjashGupta/moveInSyncTask/blob/main/public/mis-ss/Submit-success.png)
+![ss10](https://github.com/OjashGupta/moveInSyncTask/blob/main/public/mis-ss/feedback-form.png)
+![ss5](https://github.com/OjashGupta/moveInSyncTask/blob/main/public/mis-ss/Traveller-Manager-Dashboard-ByDrivers.png)
+![ss7](https://github.com/OjashGupta/moveInSyncTask/blob/main/public/mis-ss/Traveller-Manager-Dashboard-ByTraveller.png)
+![ss6](https://github.com/OjashGupta/moveInSyncTask/blob/main/public/mis-ss/Traveller-Manager-Dashboard-ByTraveller-Feedbacks.png)
+![ss8](https://github.com/OjashGupta/moveInSyncTask/blob/main/public/mis-ss/Traveller-Manager-Dashboard-ByTrips.png)
 
-### `npm start`
+## Technologies Used
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+Main technologies, frameworks, and libraries used in the project.
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+- React.js
+- Express.js
+- Node.js
+- MySQL
+- Sequelize
 
-### `npm test`
+## Features
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+Highlight key features of your project.
+TRIP FEEDBACK SYSTEM:
 
-### `npm run build`
+Users have two roles :
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+-   Traveler:-
+    -> Traveller should be able to give feedback on the trip 
+    -> While giving feedback user must give feedback on that particular trip driver 
+    -> Questions will be of your choice but you need to take comments also.
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
 
-### `npm run eject`
+-   Transport Manager:- 
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+-  The Transport manager should be able to 
+    -    1  View all feedback given by individual travelers.
+    -    2  See overall feedback on a trip 
+    -    3  See overall feedback of all trips 
+    -    4  See overall feedback of a Driver 
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
 
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
+## Getting Started
 
-## Learn More
+Instructions to set up your project locally.
+- Clone project.
+- run `npm install` to install dependencies.
+- run `npm start` to start front-end.
+- run `cd api` and `npm install` for dependencies in back-end.
+- run `node app.js` to start back-end server.
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+### Prerequisites
 
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
-"# moveInSyncTask" 
+System should have MySQL installed locally, and a connected db `mis`.
