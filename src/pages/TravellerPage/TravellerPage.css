@@ -1,0 +1,14 @@
+.traveller-list-container{
+  margin-top: 8px;
+}
+
+.list_item {
+  cursor: pointer;
+  display: flex !important;
+  flex-direction: row !important;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 4px;
+  padding: 8px;
+  border: 2px solid #d1d1d169 !important;
+}

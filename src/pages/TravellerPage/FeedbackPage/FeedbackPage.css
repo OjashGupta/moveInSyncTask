@@ -1,0 +1,64 @@
+.star-rating {
+  display: inline-block;
+}
+
+.star {
+  font-size: 24px;
+  cursor: pointer;
+  color: #ccc;
+  margin-right: 5px;
+}
+
+.star.filled {
+  color: gold;
+}
+
+.feedback_title {
+  text-align: center;
+}
+
+.c-card{
+  background-color: #f9f8fa;
+}
+
+.c-btn{
+  width: 100px;
+  border-radius: 10px;
+  margin: auto;
+}
+.c-logout-btn{
+  width: fit-content;
+  margin-left: 44px;
+}
+
+.card-grid{
+  margin: 8px 20px;
+}
+
+.feedback_card{
+  padding: 16px;
+  display: flex !important;
+  flex-direction: column !important;
+  margin: 20px auto;
+
+}
+
+.rating_box{
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-start;
+  align-items: center;
+  gap: 8px;
+}
+
+.text_box{
+  line-height: 2;
+}
+
+.form_box{
+  margin-top: 20px;
+}
+
+.form_box textarea{
+  margin-top: 8px;
+}

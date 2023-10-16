@@ -1,8 +1,7 @@
 // src/components/Login.js
 
-import { computeHeadingLevel } from "@testing-library/react";
 import React, { useEffect, useState } from "react";
-import { Link, Navigate, useNavigate } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
 import { login } from "../../services/APIService";
 import "./Login.css";
 
@@ -30,14 +29,14 @@ const Login = () => {
 
   useEffect(() => {
     console.log(user);
-    if(user){
-      localStorage.setItem("userID", user['id'] );
-      localStorage.setItem("userdata", JSON.stringify(user))
+    if (user) {
+      localStorage.setItem("userID", user["id"]);
+      localStorage.setItem("userdata", JSON.stringify(user));
     }
 
     if (user["role"] === "TRAVELLER") {
       navigate("/traveller_dashboard", { replace: true, state: user });
-    } else if (user["role"] === "TRANSPORT_MANAGER") {
+    } else if (user["role"] === "TRAVELLER_MANAGER") {
       navigate("/transport_manager_dashboard", { replace: true, state: user });
     } else {
       console.log("Login Failed");

@@ -1,0 +1,11 @@
+.active-tab {
+  background-color: lightgray !important;
+}
+
+.active-tab:hover {
+  background-color: lightgray !important;
+}
+
+.tabs {
+  margin-top: 8px;
+}

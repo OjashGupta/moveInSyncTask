@@ -7,7 +7,7 @@ function SubmittedPage() {
   return (
     <Container className="submitted_container">
       <img className="submit_img" src="/submit.png"></img>
-      Your Feedback has been submitted successfully!
+      Your feedback has been submitted successfully!
       <Link to="/traveller_dashboard">Go Back to dashboard</Link>
     </Container>
   );
